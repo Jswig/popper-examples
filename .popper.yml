@@ -72,6 +72,19 @@ pipelines:
     - concordance.sh
     - validate.sh
     - teardown.sh
+  mpip:
+    envs:
+    - host
+    path: pipelines/mpip
+    requirements:
+      vars:
+      - USERNAME
+      - MACHINE
+    stages:
+    - setup
+    - run
+    - visualize
+    vars: []
   perihelion-mercury:
     envs:
     - host
