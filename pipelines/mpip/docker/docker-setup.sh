@@ -18,5 +18,8 @@ find_or_install_spack
 
 spack install openmpi@2.0.1
 spack install lulesh
+
+export LOGNAME="slurmctld"
+
 spack install mpip
 
