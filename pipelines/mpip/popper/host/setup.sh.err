@@ -1,0 +1,6 @@
+fatal: destination path 'slurm-docker-cluster' already exists and is not an empty directory.
+mysql is up-to-date
+slurmdbd is up-to-date
+slurmctld is up-to-date
+c2 is up-to-date
+c1 is up-to-date

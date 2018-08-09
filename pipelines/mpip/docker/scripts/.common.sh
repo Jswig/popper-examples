@@ -12,4 +12,6 @@ function find_or_install_spack {
 
   source $SPACK_ROOT/share/spack/setup-env.sh
   export PATH=$SPACK_ROOT/bin:$PATH
+
+  echo "nandato"
 }

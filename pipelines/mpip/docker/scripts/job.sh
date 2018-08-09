@@ -3,7 +3,7 @@
 #SBATCH --nodes=8
 #SBATCH --ntasks=16
 
-source ./.common.sh
+source .common.sh
 find_or_install_spack
 
 SIZE=32
