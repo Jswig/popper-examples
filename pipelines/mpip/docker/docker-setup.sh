@@ -2,6 +2,7 @@
 
 cd data/scripts
 
+
 yum groupinstall -y  "Development Tools"
 yum install -y gcc-gfortran
 yum -y install gcc
@@ -10,6 +11,9 @@ source .common.sh
 
 yum install -y patch
 # yum group install -y "Development Tools"
+
+yum -y install initscripts && yum clean all
+
 
 find_or_install_spack
 

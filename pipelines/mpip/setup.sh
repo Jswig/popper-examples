@@ -16,6 +16,6 @@ cd ..
 
 docker cp . slurmctld:/data/
 
-docker exec -it slurmctld ./data/docker-setup.sh
+docker exec -e MACHINE=$MACHINE -e USERNAME=$USERNAME -it slurmctld ./data/docker-setup.sh
 
 

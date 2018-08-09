@@ -1,10 +1,5 @@
 #!/bin/bash
 set -ex
 
-# docker exec -it slurmctld bash
+docker exec -it -e MACHINE=$MACHINE -e USERNAME=$USERNAME slurmctld ./data/docker-run.sh
 
-# sinfo
-
-# scp -r ./ $USERNAME@$MACHINE:
-
-# ssh $USERNAME@$MACHINE sbatch job.sh
