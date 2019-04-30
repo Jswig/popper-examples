@@ -1,3 +1,10 @@
+- hosts: all
+  tasks:
+  - name: ensure docker is installed
+    package:
+      name: docker.io
+      state: present
+
 - hosts: server
   tasks:
   - name: stop all containers
