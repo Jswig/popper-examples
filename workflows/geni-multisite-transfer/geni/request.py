@@ -56,12 +56,12 @@ felement.attachPort(VTS.LocalCircuit())
 wan_port = felement.attachPort(VTS.GRECircuit("geni-al2s", remote_endpoint))
 
 # create the request
-site1r = VTS.Request()
-site1r.addResource(felement)
+site1_r = VTS.Request()
+site1_r.addResource(felement)
 
 # create sliver and wait for it to be ready (15 mins timeout)
 print("-- Creating sliver on ")
-site1vts_m = geni.util.createSliver(ctx, site1VTSAM, experiment, site1r)
+site1vts_m = geni.util.createSliver(ctx, site1VTSAM, experiment, site1_r)
 # }
 
 
@@ -78,10 +78,10 @@ felement.attachPort(
     VTS.GRECircuit(
         "geni-al2s", site1vts_m.findPort(wan_port.clientid).local_endpoint))
 
-site2r = VTS.Request()
-site2r.addResource(felement)
+site2_r = VTS.Request()
+site2_r.addResource(felement)
 
-site2vts_m = geni.util.createSliver(ctx, site2VTSAM, experiment, site2r)
+site2vts_m = geni.util.createSliver(ctx, site2VTSAM, experiment, site2_r)
 # }
 
 
@@ -104,12 +104,12 @@ lnk.addInterface(intf)
 lnk.connectSharedVlan(site1vts_m.local_circuits[0])
 
 # create request
-site1r = PG.Request()
-site1r.addResource(node)
-site1r.addResource(lnk)
+site1_r = PG.Request()
+site1_r.addResource(node)
+site1_r.addResource(lnk)
 
 # request node
-site1_m = geni.util.createSliver(ctx, site1AM, experiment, site1r)
+site1_m = geni.util.createSliver(ctx, site1AM, experiment, site1_r)
 
 # same as above but for server node (on site2)
 node = IGX.RawPC("server")
@@ -119,10 +119,10 @@ intf.addAddress(PG.IPv4Address(server_ip, netmask))
 lnk = PG.Link()
 lnk.addInterface(intf)
 lnk.connectSharedVlan(site2vts_m.local_circuits[0])
-site2r = PG.Request()
-site2r.addResource(node)
-site2r.addResource(lnk)
-site2_m = geni.util.createSliver(ctx, site2AM, experiment, site1r)
+site2_r = PG.Request()
+site2_r.addResource(node)
+site2_r.addResource(lnk)
+site2_m = geni.util.createSliver(ctx, site2AM, experiment, site2_r)
 # }
 
 
