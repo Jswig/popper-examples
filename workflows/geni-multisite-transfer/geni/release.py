@@ -8,9 +8,10 @@ import geni.util
 ctx = geni.util.loadContext(key_passphrase=os.environ['GENI_KEY_PASSPHRASE'])
 
 experiment = 'popper-examples'
+
 site1VTSAM = VTSAM.UKYPKS2
 site1AM = IGAM.UKYPKS2
-site2VTSAM = VTSAM.UKYPKS2
+site2VTSAM = VTSAM.NPS
 site2AM = IGAM.NPS
 
 print("Available slices: {}".format(ctx.cf.listSlices(ctx).keys()))
